@@ -16,3 +16,6 @@ print('Hello world')
 def fuc(a, b):
     c = a+b
     return c
+
+
+input('Введите имя: ')
