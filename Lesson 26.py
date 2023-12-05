@@ -4,31 +4,37 @@ class Password:
         self.__max_name_len = 20
         self.__password = None
 
-    def __check_len_password(self, new_password: str) -> bool:
-        return self.__min_name_len <= len(new_password) <= self.__max_name_len
+    def __check_len_password(self, password: str) -> bool:
+        return self.__min_name_len <= len(password) <= self.__max_name_len
 
     @property
     def password(self) -> str:
         return self.__password
 
     @password.setter
-    def password(self, new_password: str) -> None:
-        if not self.__check_len_password(new_password):
+    def password(self, password: str) -> None:
+        if not self.__check_len_password(password):
             raise ValueError(f'Пароль должен быть от {self.__min_name_len} до {self.__max_name_len} символов')
-        self.__password = new_password
+        self.__password = password
 
     @password.deleter
     def password(self) -> None:
         self.__password = 'Пароль не задан'
 
+# user = User('Николай', 30)
+# print(user.name)
+# user.name = 'Никола'
+# # user.name = 'Ник0_ла!!'
+#
+# print(user.name)
+#
+# del user.name
+# print(user.name)
+
 
 user = Password()
 
-print(user.password)
+print(user)
 
-user.password = 'Пароль12334'
-
-del user.password
-
-print(user.password)
+del user
 
