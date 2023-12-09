@@ -16,3 +16,5 @@ user = SmartHome('Maksim house')
 print(user.switch_on())
 print(user.switch_off())
 print(user.battery())
+
+
