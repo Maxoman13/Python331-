@@ -1,14 +1,18 @@
 from dataclasses import dataclass
 
 
-@dataclass
-class Person:
+@dataclass(order=True)
+class Book:
     name: str
-    age: int
+    author: str
+    year: int
 
 
-person = Person('Maksim', 30)
-person2 = Person('Ivan', 30)
+book1 = Book('Гарри Поттер', 'Джоан Роулинг', 1998)
+book2 = Book('Евгений Онегин', 'Александр Пушкин', 1721)
+book3 = Book('Игра Престолов', 'Джордж Мартин', 1999)
 
-print(person)
-print(person2)
+books = [book1, book2, book3]
+books.sort()
+print(books)
+print(sorted(books, key=lambda book: book.year))
